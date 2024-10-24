@@ -5,14 +5,14 @@ const TodoList = (props) => {
     const setActivityArr = props.setActivityArr;
 
     return (
-        <div className="bg-[#bdb4ea] border rounded-md p-3 flex-grow">
+        <div className="bg-[#bdb4ea] border rounded-md p-3 flex-grow max-w-full">
             <h1 className="text-2xl font-medium">Today's Activity</h1>
-            {activityArr.length === 0 ? <p>You Haven't added any activity yet</p> : ""}
+            {activityArr.length === 0 ? <p>You haven't added any activity yet</p> : ""}
             <ol>
                 {
                     activityArr.map((item, index) => {
                         return (
-                            <TodoItem id={item.id} activity={item.activity} index={index} activityArr={activityArr} setActivityArr={setActivityArr} />
+                            <TodoItem key={index} index={index} id={item.id} activity={item.activity} activityArr={activityArr} setActivityArr={setActivityArr} />
                         )
                     })
                 }
